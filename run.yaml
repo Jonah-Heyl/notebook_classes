@@ -1,0 +1,13 @@
+run:
+  image: 'python:latest'
+  stage: test
+  before_script:
+    - python -V
+    - pip install virtualenv
+  script:
+    - python crawl_script.py
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
